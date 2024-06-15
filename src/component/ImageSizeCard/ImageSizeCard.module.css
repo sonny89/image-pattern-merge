@@ -1,0 +1,23 @@
+.root {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #777777;
+    background-color: #cccccc;
+}
+
+.root:hover {
+    border-color: #00aa00;
+    background-color: #77cc77;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: #00aa00;
+}
+
+.notSelectable:hover {
+    background-color: #cc7777;
+}

@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import { ImageContextProvider } from './context/ImageContext';
+import { PatternContextProvider } from './context/PatternContext';
+
+import Stepper from './component/Stepper';
+
+import ImageResult from './step/ImageResult';
+import ImageSelect from './step/ImageSelect';
+import PatternSelect from './step/PatternSelect';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PatternContextProvider>
+        <ImageContextProvider>
+          <Stepper>
+            <ImageSelect />
+            <PatternSelect />
+            <ImageResult />
+          </Stepper>
+        </ImageContextProvider>
+      </PatternContextProvider>
     </div>
   );
 }
